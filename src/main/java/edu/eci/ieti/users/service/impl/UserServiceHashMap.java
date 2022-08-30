@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@Service
+//@Service
 public class UserServiceHashMap implements UserService {
     HashMap <String, User> users = new HashMap();
 

@@ -1,13 +1,22 @@
 package edu.eci.ieti.users.entities;
 
 import java.time.LocalDate;
+//Imports for MongoDB
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
 public class User {
-
+    @Id
     String id;
+
     String name;
+    @Indexed( unique = true )
     String email;
+
     String lastName;
+
     String createdAt;
 
 
