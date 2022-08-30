@@ -1,12 +1,11 @@
-package edu.eci.ieti.tasks.service.impl;
+package edu.eci.ieti.users.service.impl;
 
 
-import edu.eci.ieti.tasks.entities.User;
-import edu.eci.ieti.tasks.service.UserService;
+import edu.eci.ieti.users.entities.User;
+import edu.eci.ieti.users.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 import java.util.HashMap;
 import java.util.List;

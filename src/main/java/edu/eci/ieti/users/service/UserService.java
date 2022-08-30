@@ -1,8 +1,8 @@
-package edu.eci.ieti.tasks.service;
+package edu.eci.ieti.users.service;
 
 import java.util.List;
 
-import edu.eci.ieti.tasks.entities.User;
+import edu.eci.ieti.users.entities.User;
 
 public interface UserService {
 

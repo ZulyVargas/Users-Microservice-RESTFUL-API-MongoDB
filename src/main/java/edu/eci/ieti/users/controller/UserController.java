@@ -1,9 +1,9 @@
-package edu.eci.ieti.tasks.controller;
+package edu.eci.ieti.users.controller;
 
 
-import edu.eci.ieti.tasks.dto.UserDto;
-import edu.eci.ieti.tasks.entities.User;
-import edu.eci.ieti.tasks.service.UserService;
+import edu.eci.ieti.users.dto.UserDto;
+import edu.eci.ieti.users.entities.User;
+import edu.eci.ieti.users.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

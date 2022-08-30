@@ -1,29 +1,27 @@
-package edu.eci.ieti.tasks.entities;
+package edu.eci.ieti.users.dto;
 
 import java.time.LocalDate;
 
-public class User {
-
+public class UserDto {
     String id;
     String name;
     String email;
     String lastName;
     String createdAt;
 
-
-    public User(){
+    public UserDto(){
         this.id = String.valueOf((int)(Math.random()*9));
         this.createdAt = LocalDate.now().toString();
     }
 
-    public User(String name, String email, String lastName){
+    public UserDto(String name, String email, String lastName){
         this();
         this.name = name;
         this.lastName = lastName;
         this.email = email;
     }
 
-    public User(String id,String name, String email, String lastName, String createdAt){
+    public UserDto(String id,String name, String email, String lastName, String createdAt){
         this(name, email, lastName);
         this.id = id;
         this.createdAt = createdAt;
