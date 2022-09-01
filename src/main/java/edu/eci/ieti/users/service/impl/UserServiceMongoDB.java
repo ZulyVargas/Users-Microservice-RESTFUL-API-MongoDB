@@ -47,7 +47,16 @@ public class UserServiceMongoDB  implements UserService {
     @Override
     public User update( User user, String id )
     {
-
-        return null;
+        userRepository.save(user);
+        return userRepository.findById(id).get();
     }
+
+    //Challenge Yourself point (3 guia)
+    @Override
+    public List<User> findUsersWithNameOrLastNameLike(String queryText) {
+        return  userRepository.findByNameOrLastNameLike(queryText);
+    }
+
+
+
 }

@@ -12,6 +12,7 @@ public class User {
     String id;
 
     String name;
+
     @Indexed( unique = true )
     String email;
 

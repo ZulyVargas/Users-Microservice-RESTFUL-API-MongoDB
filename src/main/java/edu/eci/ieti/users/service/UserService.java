@@ -17,5 +17,9 @@ public interface UserService {
 
     User update( User user, String userId );
 
+    List<User> findUsersWithNameOrLastNameLike(String queryText);
+
+
+
 
 }

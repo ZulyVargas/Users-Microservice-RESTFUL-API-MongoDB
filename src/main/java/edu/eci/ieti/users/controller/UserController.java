@@ -28,10 +28,9 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<UserDto>> getAll() {
         //Get list of users and map them to dto users
-
-        ModelMapper modelMapper = new ModelMapper();
-        List<UserDto> usersDTO = new ArrayList<>();
         try {
+            ModelMapper modelMapper = new ModelMapper();
+            List<UserDto> usersDTO = new ArrayList<>();
             List<User> userList = userService.getAll();
 
             for (User user : userList) {
@@ -87,7 +86,28 @@ public class UserController {
         }
     }
 
+    //Challenge Yourself point
 
+    @GetMapping("/likeName/{queryText}")
+    public ResponseEntity<List<UserDto>> findUsersWithNameOrLastNameLike(@PathVariable String queryText){
+
+        try{
+            System.out.print("I am in the get list likeName");
+            ModelMapper modelMapper = new ModelMapper();
+            List<User> users = userService.findUsersWithNameOrLastNameLike(queryText);
+            List<UserDto> usersDTOLike = new ArrayList<>();
+            for (User user : users) {
+                usersDTOLike.add(modelMapper.map(user, UserDto.class));
+            }
+            return new ResponseEntity<>(usersDTOLike, HttpStatus.ACCEPTED);
+
+        }catch (Exception e){
+            System.out.print("e " + e);
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+
+
+    }
 
 
 }
