@@ -80,7 +80,7 @@ Initially there are two users registered in mongodb so they should be returned.
 
 4. (PUT) /api/v1/users/{id} update():
 
-![update](img/getById.png)
+![update](img/put.png)
 
 5. (GET) /api/v1/users getAll() again with more users:
 
