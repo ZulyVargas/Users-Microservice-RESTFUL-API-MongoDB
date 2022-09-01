@@ -47,5 +47,10 @@ public class UserServiceHashMap implements UserService {
         return null;
     }
 
+    @Override
+    public List<User> findUsersCreatedAfter(String startDate) {
+        return null;
+    }
+
 
 }

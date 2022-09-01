@@ -57,6 +57,11 @@ public class UserServiceMongoDB  implements UserService {
         return  userRepository.findByNameOrLastNameLike(queryText,queryText);
     }
 
+    @Override
+    public List<User> findUsersCreatedAfter(String startDate){
+        return  userRepository.findByCreatedAtGreaterThan(startDate);
+
+    }
 
 
 }

@@ -89,10 +89,9 @@ public class UserController {
     //Challenge Yourself point
 
     @GetMapping("/likeName/{queryText}")
-    public ResponseEntity<List<UserDto>> findUsersWithNameOrLastNameLike(@PathVariable String queryText){
+    public ResponseEntity<List<UserDto>> findUsersWithNameOrLastNameLike(@PathVariable String queryText) {
 
-        try{
-            System.out.print("I am in the get list likeName");
+        try {
             ModelMapper modelMapper = new ModelMapper();
             List<User> users = userService.findUsersWithNameOrLastNameLike(queryText);
             List<UserDto> usersDTOLike = new ArrayList<>();
@@ -101,13 +100,29 @@ public class UserController {
             }
             return new ResponseEntity<>(usersDTOLike, HttpStatus.ACCEPTED);
 
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/createdAtAfter/{startDate}")
+    public ResponseEntity<List<UserDto>> findUsersCreatedAfter(@PathVariable String startDate){
+
+        try{
+            ModelMapper modelMapper = new ModelMapper();
+            List<User> users = userService.findUsersCreatedAfter(startDate);
+            List<UserDto> usersDTOCreatedAfter = new ArrayList<>();
+            for (User user : users) {
+                usersDTOCreatedAfter.add(modelMapper.map(user, UserDto.class));
+            }
+            return new ResponseEntity<>(usersDTOCreatedAfter, HttpStatus.ACCEPTED);
+
         }catch (Exception e){
-            System.out.print("e " + e);
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
 
 
-    }
+}
 
 
 }
