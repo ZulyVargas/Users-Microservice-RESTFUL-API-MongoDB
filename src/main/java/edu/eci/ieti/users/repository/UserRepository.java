@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserRepository extends MongoRepository<User, String>
 {
 
-    List<User> findByNameOrLastNameLike(String regexp);
+    List<User> findByNameOrLastNameLike(String regexp, String regexpTwo);
 
 
 }

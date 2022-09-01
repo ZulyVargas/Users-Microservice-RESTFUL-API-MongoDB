@@ -54,7 +54,7 @@ public class UserServiceMongoDB  implements UserService {
     //Challenge Yourself point (3 guia)
     @Override
     public List<User> findUsersWithNameOrLastNameLike(String queryText) {
-        return  userRepository.findByNameOrLastNameLike(queryText);
+        return  userRepository.findByNameOrLastNameLike(queryText,queryText);
     }
 
 
